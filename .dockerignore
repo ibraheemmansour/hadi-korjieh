@@ -1,0 +1,31 @@
+# Version control
+.git
+.gitignore
+
+# Netlify
+netlify.toml
+.netlify
+
+# Documentation
+README.md
+*.md
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules (if any)
+node_modules
+npm-debug.log
+
+# Environment files
+.env
+.env.local
+.env.*
