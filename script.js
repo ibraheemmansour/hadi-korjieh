@@ -124,9 +124,10 @@ if (recordsSection) {
     recordsObserver.observe(recordsSection);
 }
 
-// Contact Form Handling
+// Contact Form Handling - Disabled to allow Netlify Forms to work
+// Forms now submit directly to Netlify
 const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
+if (contactForm && !contactForm.hasAttribute('data-netlify')) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
