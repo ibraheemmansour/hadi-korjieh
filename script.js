@@ -124,39 +124,9 @@ if (recordsSection) {
     recordsObserver.observe(recordsSection);
 }
 
-// Contact Form Handling - Disabled to allow Netlify Forms to work
-// Forms now submit directly to Netlify
-const contactForm = document.querySelector('.contact-form');
-if (contactForm && !contactForm.hasAttribute('data-netlify')) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const submitButton = contactForm.querySelector('.submit-button');
-        const originalText = submitButton.textContent;
-        
-        // Show loading state
-        submitButton.textContent = 'Sending...';
-        submitButton.style.opacity = '0.7';
-        submitButton.disabled = true;
-        
-        // Simulate form submission (in production, this would send to a backend/service)
-        setTimeout(() => {
-            submitButton.textContent = 'Message Sent! ✓';
-            submitButton.style.background = '#10b981';
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitButton.textContent = originalText;
-                submitButton.style.opacity = '1';
-                submitButton.style.background = '';
-                submitButton.disabled = false;
-            }, 3000);
-        }, 1500);
-    });
-}
+// Contact Form Handling - Disabled for Netlify Forms
+// All forms now submit directly to Netlify without JavaScript intervention
+// This prevents conflicts and allows proper form submission
 
 // Add active state to current section in navigation
 const sections = document.querySelectorAll('section[id]');
