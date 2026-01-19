@@ -182,6 +182,7 @@ button {
     background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #fbbf24 100%);
     position: relative;
     overflow: hidden;
+    scroll-margin-top: 80px;
 }
 
 .hero::before {
@@ -353,8 +354,9 @@ button {
 
 /* About Section - Bento Box Grid */
 .about {
-    padding: 6rem 1rem;
+    padding: 8rem 1rem 6rem;
     background: var(--color-white);
+    scroll-margin-top: 100px;
 }
 
 .bento-container {
@@ -419,6 +421,10 @@ button {
 
 .bento-wide {
     grid-column: span 1;
+}
+
+.bento-full-width {
+    grid-column: 1 / -1 !important;
 }
 
 .bento-dark {
@@ -496,22 +502,25 @@ button {
 .about-bio {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1));
+    background: rgba(255, 255, 255, 0.95);
     border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 2px solid rgba(245, 158, 11, 0.3);
 }
 
 .about-bio p {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.8;
-    color: var(--color-gray-dark);
+    color: var(--color-black);
 }
 
 /* Contact Section */
 .contact {
     padding: 6rem 1rem;
     background: var(--color-gray-light);
+    scroll-margin-top: 80px;
 }
 
 .contact-container {
@@ -681,6 +690,10 @@ button {
         grid-column: span 2;
     }
 
+    .bento-full-width {
+        grid-column: 1 / -1 !important;
+    }
+
     .bento-tall {
         grid-row: span 2;
     }
@@ -716,6 +729,10 @@ button {
 }
 
 @media (max-width: 767px) {
+    .hero {
+        padding-bottom: 8rem;
+    }
+
     .hero-name {
         font-size: 3rem;
     }
@@ -731,6 +748,18 @@ button {
 
     .stats-vertical {
         flex-direction: column;
+    }
+
+    .about-bio {
+        margin: 2rem 0 0;
+        padding: 1.5rem;
+        max-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .about-bio p {
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .contact-form {
